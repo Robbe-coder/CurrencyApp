@@ -7,7 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/currentyapp', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.set('useCreateIndex',true);
+mongoose.connect('mongodb://localhost:27017/currencyapp', {useNewUrlParser: true, useUnifiedTopology: true});
 var app = express();
 
 // view engine setup
