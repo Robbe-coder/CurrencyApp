@@ -16,9 +16,21 @@ const signup = async (req,res, next) =>{
             'status':'error'
         });
     });
+}
 
-
-   
+const login = async (req, res, next) => {
+    const user = await User.authenticate()(req.body.username, req.body.password).then(result => {
+        res.json({
+            "status": "success",
+            "data": result
+        });
+    }).catch(error => {
+        res.json({
+            "status": "error",
+            "message": error
+        });
+    });
 }
 
 module.exports.signup = signup;
+module.exports.login = login;
