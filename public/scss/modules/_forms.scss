@@ -1,7 +1,42 @@
 .form {
     background-color: $color-light-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    border-radius: $border-radius;
+
+    padding: $padding-large;
+    max-width: 400px;
 }
 
 .form__heading {
+    color: $color-text;
+    margin-bottom: $padding-large;
+}
+
+.form__details {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__input {
+    background-color: $color-background;
+    border: none;
+    border-radius: $border-radius;
+    padding: $padding-small;
+    width: auto;
+}
+
+.form__input:nth-last-of-type(2) {
+    margin-bottom: $padding-large;
+}
+
+.form__input::placeholder {
     color: $color-text;
 }
