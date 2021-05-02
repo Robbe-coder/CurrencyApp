@@ -15,8 +15,18 @@ body {
   padding-right: 30px;
 }
 
+body > * {
+  max-width: 500px;
+}
+
 .button {
   background-color: #C4C4C4;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #282C34;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
 }
 
 .form {
@@ -29,7 +39,7 @@ body {
   margin-top: 80px;
   border-radius: 10px;
   padding: 30px;
-  max-width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
 }
 
 .form__heading {
@@ -39,7 +49,7 @@ body {
 
 .form__details {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   flex-direction: column;
   width: 100%;
 }
@@ -50,6 +60,8 @@ body {
   border-radius: 10px;
   padding: 15px;
   width: auto;
+  color: #C4C4C4;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
 }
 
 .form__input:nth-last-of-type(2) {
@@ -58,6 +70,7 @@ body {
 
 .form__input::placeholder {
   color: #C4C4C4;
+  opacity: 0.6;
 }
 
 /*# sourceMappingURL=style.css.map */

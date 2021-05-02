@@ -13,3 +13,7 @@ body {
     padding-left: $padding-large;
     padding-right: $padding-large;
 }
+
+body > * {
+    max-width: $max-width-content;
+}

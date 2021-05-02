@@ -1,3 +1,11 @@
 .button {
     background-color: $color-light-grey;
+    padding: $padding-small;
+    border: none;
+    border-radius: $border-radius;
+
+    font-weight: $font-weight-semibold;
+    color: $color-button-text;
+
+    box-shadow: $shadow-small;
 }
