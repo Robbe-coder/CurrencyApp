@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 .button {
   background-color: #C4C4C4;
 }
@@ -8,6 +9,10 @@
 
 .form__heading {
   color: #C4C4C4;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
 }
 
 body {
