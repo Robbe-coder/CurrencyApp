@@ -6,6 +6,10 @@
   background-color: #3D3E4A;
 }
 
+.form__heading {
+  color: blue;
+}
+
 body {
   background: #282C34;
 }
