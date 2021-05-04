@@ -23,6 +23,10 @@ signupBtn.addEventListener("click",(e)=>{
         }).then(json => {
             if(json.status === "succes"){
                 console.log("signup succes")
+                document.querySelector('#name').value="";
+                document.querySelector('#email').value ="";
+                document.querySelector('#password').value ="";
+                document.querySelector('#password-repeat').value ="";
             }
         })
     }
