@@ -20,6 +20,8 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
   }
 }
