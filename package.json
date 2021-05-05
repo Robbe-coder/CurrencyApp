@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "sass": "sass --watch ./public/scss/style.scss ./public/css/style.css"
+    "gulp": "./node_modules/.bin/gulp"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
