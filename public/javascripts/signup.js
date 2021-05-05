@@ -7,7 +7,7 @@ signupBtn.addEventListener("click",(e)=>{
     let passwordRepeat = document.querySelector("#password-repeat").value;
 
     if(password === passwordRepeat){
-        fetch('http://localhost:3000/users/signup',{
+        fetch('http://localhost:3000/users/signup',{ // Variabele toevoegen
             method: "post",
             headers:{
                 'Content-Type': 'application/json'
