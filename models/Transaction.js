@@ -8,3 +8,5 @@ const Transaction = new Schema({
     person_from_id: Number,
     reason: String
 });
+
+module.exports = mongoose.model('Transaction', Transaction);
