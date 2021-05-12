@@ -16,4 +16,6 @@ body {
 
 body > * {
     max-width: $max-width-content;
+    margin-left: auto;
+    margin-right: auto;
 }
