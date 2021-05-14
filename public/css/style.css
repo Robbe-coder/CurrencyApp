@@ -18,13 +18,19 @@ body > * {
   margin-right: auto; }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #C4C4C4;
   padding: 15px;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   color: #282C34;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px; }
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  width: 6em;
+  height: 1.5em; }
 
 .form {
   background-color: #3D3E4A;
@@ -61,3 +67,86 @@ body > * {
 .form__input::placeholder {
   color: #C4C4C4;
   opacity: .6; }
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-top: 80px; }
+
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #C4C4C4;
+  padding: 15px;
+  width: 6em;
+  height: 1em;
+  background-color: #3D3E4A;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  margin: 15px; }
+
+.menu__picture {
+  background-color: #3D3E4A;
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: 20px; }
+
+.balance {
+  background-color: #3D3E4A;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px; }
+
+.heading--medium {
+  color: #C4C4C4;
+  grid-column: 1/span1;
+  padding: 30px; }
+
+.balance__data {
+  font-size: 3em;
+  font-weight: 600;
+  color: #FF7A30;
+  padding-left: 30px; }
+
+.balance .button {
+  display: flex;
+  justify-content: center;
+  margin-left: 30px; }
+
+.transactions {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.heading--small {
+  color: #C4C4C4;
+  font-size: 25px;
+  width: 100%;
+  margin-bottom: 15px; }
+
+.transaction__card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #3D3E4A;
+  width: 300px;
+  height: 76px;
+  border-radius: 10px;
+  margin-bottom: 15px; }
+
+.transaction__card p {
+  margin-left: 30px;
+  margin-right: 30px; }
+
+.transaction__text {
+  color: #C4C4C4; }

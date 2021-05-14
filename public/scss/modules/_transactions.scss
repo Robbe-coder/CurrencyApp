@@ -1,0 +1,32 @@
+.transactions{
+    padding: $padding-small;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    
+}
+.heading--small{
+    color: $color-light-grey;
+    font-size: $heading-small;
+    width: 100%;
+    margin-bottom: $margin-small;
+}
+.transaction__card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-light-blue;
+    width: 300px;
+    height: 76px;
+    border-radius: $border-radius;
+    margin-bottom: $margin-small;
+}
+.transaction__card p{
+    margin-left: $padding-large;
+    margin-right: $padding-large;
+}
+.transaction__text{
+    color: $color-light-grey;
+}

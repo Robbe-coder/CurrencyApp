@@ -4,7 +4,15 @@ $padding-small: 15px;
 $padding-medium: 20px;
 $padding-large: 30px;
 
+$margin-small: $padding-small;
+$margin-medium: $padding-medium;
+$margin-large: $padding-large;
+
+$heading-medium: 32px;
+$heading-small: 25px;
 $max-width-content: 500px;
 
 $shadow-large: rgba(0, 0, 0, 0.25) 0px 8px 35px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
 $shadow-small: rgba(0, 0, 0, .25) 0px 5px 5px 0px, rgba(0, 0, 0, .1) 0px 0px 0px 1px;
+
+$fontsize-extralarge: 3em;

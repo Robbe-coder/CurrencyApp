@@ -1,4 +1,7 @@
 .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $color-light-grey;
     padding: $padding-small;
     border: none;
@@ -6,6 +9,8 @@
 
     font-weight: $font-weight-semibold;
     color: $color-button-text;
-
+    text-decoration: none;
     box-shadow: $shadow-small;
+    width: 6em;
+    height: 1.5em;
 }

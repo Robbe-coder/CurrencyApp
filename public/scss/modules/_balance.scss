@@ -1,0 +1,26 @@
+.balance{
+    background-color: $color-light-blue;
+    border-radius: $border-radius;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-small;
+}
+.heading--medium{
+    color: $color-light-grey;
+    grid-column: 1/span1;
+    padding: $padding-large;
+}
+.balance__data{
+    font-size: $fontsize-extralarge;
+    font-weight: $font-weight-semibold;
+    color: $color-orange;
+    padding-left: $padding-large;
+}
+.balance .button{
+    display: flex;
+    justify-content: center;
+    margin-left: $margin-large;
+}
