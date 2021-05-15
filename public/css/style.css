@@ -32,6 +32,11 @@ body > * {
   width: 6em;
   height: 1.5em; }
 
+.button--submit {
+  align-self: center;
+  width: 8em;
+  height: auto; }
+
 .form {
   background-color: #3D3E4A;
   display: flex;
@@ -67,6 +72,12 @@ body > * {
 .form__input::placeholder {
   color: #C4C4C4;
   opacity: .6; }
+
+.form__input-textbox {
+  resize: none; }
+
+.form__label {
+  color: #C4C4C4; }
 
 .menu {
   display: flex;
