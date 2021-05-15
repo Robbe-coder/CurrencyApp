@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newtransactions</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="#" class="menu__item">home</a>
+            <a href="#" class="menu__item">payments</a>
+            <img src="#" class="menu__picture">
+        </div>
+    </header>
+    <main>
+        <div class="balance">
+            <h1 class="heading--medium">balance</h1>
+            <span class="balance__data">€ 900</span>
+        </div>
+        <form class="form" action="#">
+            <h2 class="form__heading" >new transaction</h2>
+            <div class="form__details"> 
+
+                <label class="form__label" for="name">to</label>
+                <input class="form__input form__input-text" id="name" type="text" placeholder="name">
+                <label class="form__label" for="amount">amount</label>
+                <input class="form__input form__input-text" id="amount" type="text" placeholder="100">
+                <label class="form__label" for="reason">reason</label>
+                <select class="form__input form__input-select" name="reason" id="reason" form="form">
+                    <option value="Helping out">Helping out</option>
+                    <option value="Team work">Team work</option>
+                    <option value="Going the extra mile">Going the extra mile</option>
+                    <option value="Other">Other</option>
+                </select>
+                  <label class="form__label" for="message">message(optional)</label>
+                  <textarea class="form__input form__input-textbox" name="message" id="message" cols="60" rows="10"></textarea>
+                  <input class="button button--submit" type="submit" value="Submit">
+            </div>
+        </form>
+    </main>
+    <script src="javascripts/newtransaction.js"></script>
+</body>
+</html>
