@@ -23,9 +23,12 @@
     border-radius: $border-radius;
     margin-bottom: $margin-small;
 }
-.transaction__card p{
-    margin-left: $padding-large;
-    margin-right: $padding-large;
+.transaction__card {
+    .transaction__text{
+        
+        margin-left: $padding-large;
+        margin-right: $padding-large;
+    }
 }
 .transaction__text{
     color: $color-light-grey;
