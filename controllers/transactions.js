@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const getAll = (req, res) => {
     res.json({
         "status": "success",
-        "message": "test"
+        "message": "Get test"
     }).catch(err => {
         res.json({
             "status": "error",
@@ -13,4 +13,12 @@ const getAll = (req, res) => {
     });
 }
 
+const addTransaction = (req, res) => {
+    res.json({
+        "status": "success",
+        "message": "Post test"
+    });
+}
+
 module.exports.getAll = getAll;
+module.exports.addTransaction = addTransaction;

@@ -13,5 +13,6 @@ router.get('/', transactionController.getAll);
 
 //// Add new transaction
 // POST /api/transactions
+router.post('/', transactionController.addTransaction);
 
 module.exports = router;
