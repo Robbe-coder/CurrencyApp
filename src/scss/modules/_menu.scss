@@ -1,28 +1,40 @@
-
-.menu{
+.menu {
     display: flex;
     align-items: center;
     margin-top: 80px;
 }
-.menu__item{
+
+.menu__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: $color-light-grey;
-    padding: $padding-small;
-    width: 6em;
-    height: 1em;
     background-color: $color-light-blue;
-    border-radius: $border-radius;
     box-shadow: $shadow-small;
     margin: $margin-small;
 }
-.menu__picture{
+
+.menu__item--link {
+    text-decoration: none;
+    color: $color-light-grey;
+    padding: $padding-small;
+    border-radius: $border-radius;
+    width: 6em;
+    height: 1em;
+}
+
+.menu__item--picture {
+
     background-color: $color-light-blue;
     width: 3em;
     height: 3em;
     border-radius: 100%;
     margin-left: auto;
-    margin-right: $margin-medium;
+        
+    img{
+        width: 3em;
+        height: 3em;
+        border-radius: 100%;
+       
+    }
+
 }

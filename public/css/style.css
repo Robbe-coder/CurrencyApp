@@ -88,23 +88,28 @@ body > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  color: #C4C4C4;
-  padding: 15px;
-  width: 6em;
-  height: 1em;
   background-color: #3D3E4A;
-  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
   margin: 15px; }
 
-.menu__picture {
+.menu__item--link {
+  text-decoration: none;
+  color: #C4C4C4;
+  padding: 15px;
+  border-radius: 10px;
+  width: 6em;
+  height: 1em; }
+
+.menu__item--picture {
   background-color: #3D3E4A;
   width: 3em;
   height: 3em;
   border-radius: 100%;
-  margin-left: auto;
-  margin-right: 20px; }
+  margin-left: auto; }
+  .menu__item--picture img {
+    width: 3em;
+    height: 3em;
+    border-radius: 100%; }
 
 .balance {
   background-color: #3D3E4A;
