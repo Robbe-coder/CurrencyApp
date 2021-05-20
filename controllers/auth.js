@@ -7,7 +7,7 @@ const signup = async (req,res, next) =>{
 
     const user = new User({username: username, amount: 100});
     await user.setPassword(password);
-    await user.save().then(result => {npx 
+    await user.save().then(result => {
         console.log(result);
 
         res.json({
