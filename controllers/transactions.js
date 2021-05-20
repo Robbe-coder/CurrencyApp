@@ -45,5 +45,26 @@ const addTransaction = (req, res) => {
         });
 }
 
+/*const getUserTransactions =(req, res) =>{
+    const id = req.params.id;
+    if (req.params.id != undefined) {
+        // get all transfers as sender
+        Transaction.findOne({ "_id": req.params.id }, (err, doc) => {
+            if (!err) {
+                res.json({
+                    "status": "success",
+                    "data": {
+                        "transfer": doc,
+                    }
+                });
+            }
+        });
+    } else {
+        res.json({
+            "status": "error",
+            "message": "No id has been provided.",
+        });
+}*/
 module.exports.getAll = getAll;
 module.exports.addTransaction = addTransaction;
+//module.exports.getUserTransactions = getUserTransactions;
