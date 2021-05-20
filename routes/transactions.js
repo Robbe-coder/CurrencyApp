@@ -10,9 +10,9 @@ router.get('/', transactionController.getAll);
 
 /// Get all transactions from specific user
 // GET /api/transactions/:user-id
-//router.get('/usertransactions', transactionController.getUserTransactions);
+router.get('/:id', transactionController.getUserTransactions);
 //// Add new transaction
 // POST /api/transactions
-router.post('/:id', transactionController.addTransaction);
+router.post('/', transactionController.addTransaction);
 
 module.exports = router;

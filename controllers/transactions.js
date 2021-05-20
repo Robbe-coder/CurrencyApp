@@ -40,31 +40,28 @@ const addTransaction = (req, res) => {
         .catch(err => {
             res.json({
                 "status": "error",
-                "error": error
+                "error": err
             });
         });
 }
+const getUserTransactions = (req, res) =>{
+    const id = req.params.id; 
+    Transaction.find({ $or: [ { "person_to_id": id } , { "person_from_id": id } ] }, (err, doc)=>{
+        if(doc){
+            res.json({
+                "transactions": doc
+            });
+        }
+        else{
+            res.json({
+                "message":"documents where not found",
+                "error": err
+        
+            });
+        }
+    })
 
-/*const getUserTransactions =(req, res) =>{
-    const id = req.params.id;
-    if (req.params.id != undefined) {
-        // get all transfers as sender
-        Transaction.findOne({ "_id": req.params.id }, (err, doc) => {
-            if (!err) {
-                res.json({
-                    "status": "success",
-                    "data": {
-                        "transfer": doc,
-                    }
-                });
-            }
-        });
-    } else {
-        res.json({
-            "status": "error",
-            "message": "No id has been provided.",
-        });
-}*/
+}
 module.exports.getAll = getAll;
 module.exports.addTransaction = addTransaction;
-//module.exports.getUserTransactions = getUserTransactions;
+module.exports.getUserTransactions = getUserTransactions;
