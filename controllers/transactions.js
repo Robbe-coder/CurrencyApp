@@ -35,7 +35,7 @@ const addTransaction = (req, res) => {
             res.json({
                 "status": "success",
                 "data": data
-            })
+            });
         })
         .catch(err => {
             res.json({
@@ -44,24 +44,24 @@ const addTransaction = (req, res) => {
             });
         });
 }
-const getUserTransactions = (req, res) =>{
+
+const getUserTransactions = (req, res) => {
     const id = req.params.id; 
-    Transaction.find({ $or: [ { "person_to_id": id } , { "person_from_id": id } ] }, (err, doc)=>{
-        if(doc){
+    Transaction.find({ $or: [{ "person_to_id": id }, { "person_from_id": id }] }, (err, doc) => {
+        if(doc) {
             res.json({
                 "transactions": doc
             });
         }
-        else{
+        else {
             res.json({
                 "message":"documents where not found",
                 "error": err
-        
             });
         }
-    })
-
+    });
 }
+
 module.exports.getAll = getAll;
 module.exports.addTransaction = addTransaction;
 module.exports.getUserTransactions = getUserTransactions;
