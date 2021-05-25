@@ -20,12 +20,15 @@
             <h1 class="heading--medium">balance</h1>
             <span class="balance__data">€ 900</span>
         </div>
-        <form class="form" action="#">
+        <form class="form" action="#" autocomplete="off">
             <h2 class="form__heading" >new transaction</h2>
             <div class="form__details"> 
 
                 <label class="form__label" for="name">to</label>
-                <input class="form__input form__input-text" id="name" type="text" placeholder="name">
+                <div class="form__autocomplete">
+                    <input class="form__input form__input-text" id="name" type="text" placeholder="name">
+                </div>
+
                 <label class="form__label" for="amount">amount</label>
                 <input class="form__input form__input-text" id="amount" type="text" placeholder="100">
                 <label class="form__label" for="reason">reason</label>

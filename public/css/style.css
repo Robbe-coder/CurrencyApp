@@ -79,6 +79,41 @@ body > * {
 .form__label {
   color: #C4C4C4; }
 
+.form__autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: .8125em; }
+
+.form__autocomplete > input {
+  box-sizing: border-box;
+  width: 100%; }
+
+.form__autocomplete-items {
+  color: #C4C4C4;
+  position: absolute;
+  border: 1px solid #3D3E4A;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0; }
+
+.form__autocomplete-items div {
+  padding: 15px;
+  cursor: pointer;
+  background-color: #282C34;
+  border-bottom: 1px solid #3D3E4A; }
+
+.form__autocomplete-items div:hover {
+  background-color: #21242b;
+  color: #C4C4C4; }
+
+.form__autocomplete--active {
+  background-color: #191c21 !important;
+  color: #C4C4C4; }
+
 .menu {
   display: flex;
   align-items: center;

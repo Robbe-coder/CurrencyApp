@@ -40,10 +40,55 @@
     color: $color-text;
     opacity: .6;
 }
+
 .form__input--textbox{
     resize: none;
 }
+
 .form__label{
     color: $color-light-grey;
     
+}
+
+.form__autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    font-size: .8125em;
+}
+
+.form__autocomplete > input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form__autocomplete-items {
+    color: $color-light-grey;
+    position: absolute;
+    border: 1px solid $color-light-blue;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.form__autocomplete-items div {
+    padding: $padding-small;
+    cursor: pointer;
+    background-color: $color-dark-blue;
+    border-bottom: 1px solid $color-light-blue;
+}
+
+.form__autocomplete-items div:hover {
+    background-color: $color-medium-blue;
+    color: $color-text;
+}
+
+.form__autocomplete--active  {
+    background-color: $color-darker-blue !important;
+    color: $color-text;
 }
