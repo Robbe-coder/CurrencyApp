@@ -10,10 +10,15 @@ const signup = async (req,res, next) => {
     await user.setPassword(password);
     await user.save().then(result => {
         console.log(result);
-
+        let token = jwt.sign({
+            _id: result._id 
+        }, "MyVerySecretWord")
         res.json({
             "status": "success",
-            "data": result
+            "result": result, 
+            "data":{
+                "token":token
+            }
         });
     }).catch(error => {
         console.log(error);
