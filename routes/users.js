@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const authController = require('../controllers/auth');
+const usersController = require('../controllers/users');
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+/// Get info from specific user based on username
+// GET /api/users/:username
+router.get('/', usersController.getUser);
 
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
