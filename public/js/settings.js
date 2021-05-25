@@ -1,0 +1,1 @@
+"use strict";var settings={host:"http://localhost:3000"};

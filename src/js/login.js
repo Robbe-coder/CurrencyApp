@@ -2,10 +2,11 @@ const signupBtn = document.querySelector(".button--submit");
 
 signupBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
     let username = document.querySelector('#username').value;
     let password = document.querySelector('#password').value;
     
-        fetch("http://localhost:3000/api/users/login", {
+        fetch(settings.host + "/api/users/login", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
