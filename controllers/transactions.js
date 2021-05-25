@@ -6,12 +6,7 @@ const getAll = (req, res) => {
     res.json({
         "status": "success",
         "message": "Get test"
-    }).catch(err => {
-        res.json({
-            "status": "error",
-            "error": error
-        });
-    });
+    })
 }
 
 const addTransaction = (req, res) => {

@@ -1,0 +1,1 @@
+"use strict";fetch(settings.host+"/api/transactions/",{headers:{Authorization:"Bearer"+localStorage.getItem("token")}}).then(function(a){return a.json()}).then(function(a){console.log(a)})["catch"](function(a){console.log(a),console.log("Het werkt niet")});
