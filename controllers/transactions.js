@@ -3,9 +3,12 @@ const jwt = require('jsonwebtoken');
 const mongoose = require("mongoose");
 
 const getAll = (req, res) => {
+    let token = req.headers.authorization;
+    token = token.split(" ")[1];
     res.json({
         "status": "success",
-        "message": "Get test"
+        "message": "Get test",
+        "token":token
     })
 }
 
