@@ -1,9 +1,9 @@
 window.addEventListener("load",()=>{
-   
-    fetch("/api/transactions/", {
+
+    fetch(settings.host + "/api/transactions/", {
         method:"get",
         headers: {
-            "Authorization": 'Bearer ' + localStorage.getItem('token')
+            "Authorization": 'Bearer  ' + localStorage.getItem('token')
         }
     }).then(result => {
         return result.json();
