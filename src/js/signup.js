@@ -24,12 +24,18 @@ signupBtn.addEventListener("click", (e) => {
             return response.json();
 
         }).then(json => {
-            if(json.status === "succes") {
+            console.log(json);
+            if(json.status === "success") {
                 console.log("signup succes");
                 document.querySelector('#username').value = "";
                 document.querySelector('#email').value = "";
                 document.querySelector('#password').value = "";
                 document.querySelector('#password-repeat').value = "";
+                
+                let token = json.data.token;
+                localStorage.setItem("token",token);
+                window.location.href="home.html";
+
             }
         });
     }

@@ -22,7 +22,9 @@ signupBtn.addEventListener("click", (e) => {
         }).then(json => {
             if(json.status === "success"){
                 console.log("login succes")
-                
+                let token = json.data.token;
+                localStorage.setItem("token",token);
+                window.location.href="home.html";
             }
         })
     

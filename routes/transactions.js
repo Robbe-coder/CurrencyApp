@@ -6,11 +6,11 @@ const transactionController = require('../controllers/transactions');
 
 //// Get all transactions
 // GET /api/transactions
-router.get('/', transactionController.getAll);
+//router.get('/', transactionController.getAll);
 
 /// Get all transactions from specific user
 // GET /api/transactions/:user-id
-router.get('/:id', transactionController.getUserTransactions);
+router.get('/', transactionController.getUserTransactions);
 
 //// Add new transaction
 // POST /api/transactions

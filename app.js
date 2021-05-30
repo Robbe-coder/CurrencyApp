@@ -8,7 +8,7 @@ const cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var transactionsRouter = require('./routes/transactions');
-
+const passport =require('./passport/passport');
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb://localhost:27017/currencyapp', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -27,7 +27,7 @@ app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/transactions', transactionsRouter);
+app.use('/api/transactions',passport.authenticate('jwt', { session: false }), transactionsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

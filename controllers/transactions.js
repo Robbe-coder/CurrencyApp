@@ -2,17 +2,17 @@ const Transaction = require('../models/Transaction');
 const jwt = require('jsonwebtoken');
 const mongoose = require("mongoose");
 
-const getAll = (req, res) => {
+/*const getAll = (req, res) => {
+    let token = req.headers.authorization;
+    token = token.split("  ")[1];
+    let decode = jwt.decode(token).uid;
     res.json({
         "status": "success",
-        "message": "Get test"
-    }).catch(err => {
-        res.json({
-            "status": "error",
-            "error": error
-        });
-    });
-}
+        "message": "Get test",
+        "token":token, 
+        "decode": decode
+    })
+}*/
 
 const addTransaction = (req, res) => {
     let amount = req.body.amount;
@@ -46,11 +46,17 @@ const addTransaction = (req, res) => {
 }
 
 const getUserTransactions = (req, res) => {
-    const id = req.params.id; 
-    Transaction.find({ $or: [{ "person_to_id": id }, { "person_from_id": id }] }, (err, doc) => {
+    //const id = req.params.id; 
+    let token = req.headers.authorization;
+    token = token.split("  ")[1];
+    let decode = jwt.decode(token).uid;
+    
+    Transaction.find({ $or: [{ "person_to_id": decode }, { "person_from_id": decode }] }, (err, doc) => {
         if(doc) {
             res.json({
-                "transactions": doc
+                "transactions": doc,
+                "personid":decode
+                
             });
         }
         else {
@@ -62,6 +68,6 @@ const getUserTransactions = (req, res) => {
     });
 }
 
-module.exports.getAll = getAll;
+//module.exports.getAll = getAll;
 module.exports.addTransaction = addTransaction;
 module.exports.getUserTransactions = getUserTransactions;

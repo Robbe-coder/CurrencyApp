@@ -1,19 +1,28 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-const signup = async (req,res, next) => {
+const signup = async (req, res, next) => {
     let email = req.body.email;
-    let username = req.body.username; 
+    let username = req.body.username;
     let password = req.body.password;
 
-    const user = new User({username: username, email: email, amount: 100});
+    const user = new User({
+        username: username,
+        email: email,
+        amount: 100
+    });
     await user.setPassword(password);
     await user.save().then(result => {
         console.log(result);
-
+        let token = jwt.sign({
+            uid: result._id
+        }, "MyVerySecretWord");
         res.json({
             "status": "success",
-            "data": result
+            "result": result,
+            "data": {
+                "token": token
+            }
         });
     }).catch(error => {
         console.log(error);
@@ -26,9 +35,22 @@ const signup = async (req,res, next) => {
 
 const login = async (req, res, next) => {
     const user = await User.authenticate()(req.body.username, req.body.password).then(result => {
-        res.json({
+        if (!result.user) {
+            return res.json({
+                "status": "failed",
+                "message": "login failed"
+            })
+        }
+
+        let token = jwt.sign({
+            uid: result.user._id
+        }, "MyVerySecretWord");
+
+        return res.json({
             "status": "success",
-            "data": result
+            "data": {
+                "token": token
+            }
         });
     }).catch(error => {
         res.json({
