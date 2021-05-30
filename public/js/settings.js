@@ -1,1 +1,1 @@
-"use strict";var settings={host:"http://localhost:3000"};
+"use strict";var settings={host:"https://currencyapprobbebob.herokuapp.com"};
