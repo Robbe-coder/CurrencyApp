@@ -1,15 +1,40 @@
 const newTransactionButton = document.querySelector(".button--submit");
 const inputUsername = document.getElementById("name");
+let token = localStorage.getItem('token');
 
-
-primus = Primus.connect("http://localhost:3000", {
+ let primus = Primus.connect("http://localhost:3000", {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
       , min: 500 // Number: The minimum delay before we try reconnect.
-      , retries: 10 // Number: How many times we should try to reconnect.
+      , retries: 10
+       // Number: How many times we should try to reconnect.
     }
+    
   });
-  
+ 
+primus.on("data",(json)=>{
+    
+    if(json.action ==="updateAmount"){
+
+        console.log("ja");
+        console.log(json.data);
+        console.log("ja");
+       let amount= json.data.data.amount;
+       let saldo = document.querySelector(".balance__data").innerHTML;
+       saldo = saldo - amount;
+       document.querySelector(".balance__data").innerHTML = saldo;
+       
+       
+        
+    }
+})
+
+let transactionSucces = (json)=>{
+    console.log(json);
+    let formSuccess = document.querySelector(".form__success");
+            formSuccess.innerText = "Succesfully made a transaction!";
+            formSuccess.style.display = "flex";
+}
 
 newTransactionButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -39,10 +64,12 @@ newTransactionButton.addEventListener("click", (e) => {
             document.getElementById("amount").value = "";
             document.getElementById("reason").value = "Helping out";
             document.getElementById("message").value = "";
+            primus.write({
+                "action":"updateAmount",
+                "data": json
+            });
+            transactionSucces(json);
             
-            let formSuccess = document.querySelector(".form__success");
-            formSuccess.innerText = "Succesfully made a transaction!";
-            formSuccess.style.display = "flex";
         } else if(json.status === "error") {
             document.getElementById("name").value = "";
             document.getElementById("amount").value = "";
