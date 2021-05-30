@@ -12,7 +12,9 @@ window.addEventListener("load",()=>{
     }).then(json => {
         console.log(json);
         //console.log(json.transactions[0].amount);
-        for(let i = 0; i < 3;i++){
+        console.log(json.transactions.length);
+        let arrayLength= json.transactions.length;
+        for(let i = arrayLength -1; i >= arrayLength -3;i--){
             
             let transactionElement = document.querySelector(".transactionslist");
             let card = document.createElement("div");
@@ -26,8 +28,9 @@ window.addEventListener("load",()=>{
             let imageArrow = document.createElement("img");
             span.classList.add("transaction__text--highlight");
             imageArrow.classList.add("icon");
-
-            if(json.personid === json.transactions[i].person_to_id){
+            json.transactions[i];
+           if(json.personid === json.transactions[i].person_to_id){
+                
                 text.innerHTML = ` received ${json.transactions[i].amount} coins`;
                 imageArrow.src="images/arrow-left.svg"
             }
