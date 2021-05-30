@@ -33,6 +33,15 @@ newTransactionButton.addEventListener("click", (e) => {
             let formSuccess = document.querySelector(".form__success");
             formSuccess.innerText = "Succesfully made a transaction!";
             formSuccess.style.display = "flex";
+        } else if(json.status === "error") {
+            document.getElementById("name").value = "";
+            document.getElementById("amount").value = "";
+            document.getElementById("reason").value = "Helping out";
+            document.getElementById("message").value = "";
+            
+            let formError = document.querySelector(".form__error");
+            formError.innerText = json.error;
+            formError.style.display = "flex";
         }
     });
 

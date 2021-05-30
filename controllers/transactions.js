@@ -34,13 +34,21 @@ const addTransaction = (req, res) => {
         reason: reason
     });
 
-    User.findById(person_to_id, (err, result) => {
-        let newAmount = result.amount + amount;
-        User.findByIdAndUpdate(person_to_id, {amount: newAmount}, (err, result) => {
+    User.findById(person_from_id, (err, result) => {
+        if(result.amount < amount) {
+            res.json({
+                "status": "error",
+                "error": "You don't have enough coins."
+            });
+            return;
+        }
+        
+        let newAmount = result.amount - amount;
+        User.findByIdAndUpdate(person_from_id, {amount: newAmount}, (err, result) => {
 
-            User.findById(person_from_id, (err, result) => {
-                let newAmount = result.amount - amount;
-                User.findByIdAndUpdate(person_from_id, {amount: newAmount}, (err, result) => {
+            User.findById(person_to_id, (err, result) => {
+                let newAmount = result.amount + amount;
+                User.findByIdAndUpdate(person_to_id, {amount: newAmount}, (err, result) => {
                     newTransaction
                     .save()
                     .then(data => {
