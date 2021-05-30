@@ -1,4 +1,5 @@
 const Transaction = require('../models/Transaction');
+const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const mongoose = require("mongoose");
 
@@ -15,10 +16,14 @@ const mongoose = require("mongoose");
 }*/
 
 const addTransaction = (req, res) => {
+    let token = req.headers.authorization;
+    token = token.split("  ")[1];
+    let uid = jwt.decode(token).uid;
+
     let amount = req.body.amount;
     let message = req.body.message;
     let person_to_id = req.body.person_to_id;
-    let person_from_id = req.body.person_from_id;
+    let person_from_id = uid;
     let reason = req.body.reason;
 
     const newTransaction = new Transaction({
@@ -28,21 +33,34 @@ const addTransaction = (req, res) => {
         person_from_id: person_from_id,
         reason: reason
     });
-    
-    newTransaction
-        .save()
-        .then(data => {
-            res.json({
-                "status": "success",
-                "data": data
+
+    User.findById(person_to_id, (err, result) => {
+        let newAmount = result.amount + amount;
+        User.findByIdAndUpdate(person_to_id, {amount: newAmount}, (err, result) => {
+
+            User.findById(person_from_id, (err, result) => {
+                let newAmount = result.amount - amount;
+                User.findByIdAndUpdate(person_from_id, {amount: newAmount}, (err, result) => {
+                    newTransaction
+                    .save()
+                    .then(data => {
+                        res.json({
+                            "status": "success",
+                            "data": data
+                        });
+                    })
+                    .catch(err => {
+                        res.json({
+                            "status": "error",
+                            "error": err
+                        });
+                    });
+                });
             });
-        })
-        .catch(err => {
-            res.json({
-                "status": "error",
-                "error": err
-            });
+
         });
+    });    
+
 }
 
 const getUserTransactions = (req, res) => {

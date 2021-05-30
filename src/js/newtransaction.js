@@ -1,7 +1,39 @@
-let names = [];
-
+const newTransactionButton = document.querySelector(".button--submit");
 const inputUsername = document.getElementById("name");
-console.log(inputUsername);
+
+newTransactionButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let userIdTo = document.getElementById("name").dataset.userid;
+    let amount = parseInt(document.getElementById("amount").value);
+    let reason = document.getElementById("reason").value;
+    let message = document.getElementById("message").value;
+
+    fetch(settings.host + "/api/transactions", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": 'Bearer  ' + localStorage.getItem('token')
+        },
+        body: JSON.stringify({
+            "person_to_id": userIdTo,
+            "amount": amount,
+            "reason": reason,
+            "message": message
+        })
+    }).then(response => {
+        return response.json();
+    }).then(json => {
+        if(json.status === "success") {
+            document.getElementById("name").value = "";
+            document.getElementById("amount").value = "";
+            document.getElementById("reason").value = "Helping out";
+            document.getElementById("message").value = "";
+            window.alert("Transaction succesful!");
+        }
+    });
+
+});
 
 // Code inspired by: https://www.w3schools.com/howto/howto_js_autocomplete.asp
 
