@@ -91,3 +91,19 @@ function closeAllLists(elmnt) {
 document.addEventListener("click", function (e) {
     closeAllLists(e.target);
 });
+
+fetch(settings.host + "/api/users/amount", {
+    method:"get",
+    headers: {
+        "Authorization": 'Bearer ' + localStorage.getItem('token')
+    }
+}).then(result => {
+    return result.json();
+}).then(json => {
+    let amount = json.transactions[0].amount;
+    document.querySelector(".balance__data").innerHTML = amount;
+
+}).catch(error => {
+    console.log(error);
+    console.log("Het werkt niet");
+});
