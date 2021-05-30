@@ -1,3 +1,3 @@
 const settings = {
-    host: "http://localhost:3000"
+    host: "https://currencyapprobbebob.herokuapp.com"
 };
