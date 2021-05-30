@@ -28,7 +28,10 @@ signupBtn.addEventListener("click", (e) => {
             } else if(json.status === "error") {
                 document.querySelector('#username').value = "";
                 document.querySelector('#password').value = "";
-                window.alert(json.message);
+                
+                let formError = document.querySelector(".form__error");
+                formError.innerText = json.message;
+                formError.style.display = "flex";
             }
         })
     
