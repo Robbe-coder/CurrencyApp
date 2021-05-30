@@ -47,7 +47,7 @@ window.addEventListener("load",()=>{
                 card.appendChild(text);
                 card.appendChild(imageArrow);
                 transactionElement.appendChild(card);
-                //document.querySelector(".transaction__text").innerHTML = `${json.transactions[i].amount} + ${json.transactions[i].message}`;
+                
                 
             }
         }
