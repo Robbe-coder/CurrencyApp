@@ -3,13 +3,13 @@ const jwt = require('jsonwebtoken');
 const mongoose = require("mongoose");
 
 const getUser = (req, res) => {
-    if(req.query.username) {
-        let username = req.query.username;
+    if(req.query.name) {
+        let name = req.query.name;
 
-        User.find({ username: { $regex: username, $options: "i" } }, (err, user) => {   
+        User.find({ name: { $regex: name, $options: "i" } }, (err, user) => {   
             res.json({
                 "message": "Searching user...",
-                "query": username,
+                "query": name,
                 "user": user
             });
         });
