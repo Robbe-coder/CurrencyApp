@@ -21,4 +21,24 @@ const getUser = (req, res) => {
     }
 };
 
+const getUserAmount = (req, res) => {
+    let token = req.headers.authorization;
+    token = token.split(" ")[1];
+    let decode = jwt.decode(token).uid;
+
+    User.find({"_id":decode},{amount:1}, (err, doc) => {
+        if(doc) {
+            res.json({
+                "transactions": doc,
+                
+            });
+        }
+        else {
+            res.json({
+                "error": err
+            });
+        }
+    });
+}
+module.exports.getUserAmount = getUserAmount;
 module.exports.getUser = getUser;
