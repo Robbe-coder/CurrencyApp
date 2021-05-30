@@ -54,7 +54,9 @@ const getUserTransactions = (req, res) => {
     Transaction.find({ $or: [{ "person_to_id": decode }, { "person_from_id": decode }] }, (err, doc) => {
         if(doc) {
             res.json({
-                "transactions": doc
+                "transactions": doc,
+                "personid":decode
+                
             });
         }
         else {
