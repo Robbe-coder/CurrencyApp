@@ -1,8 +1,0 @@
-{
-    "Database":{
-        "conn": "mongodb+srv://currencyapp-endboss:onXz8H5zqyEFT4BV@cluster0.4bls7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    }, 
-    "jwt": {
-        "secret":"MyVerySecretWord"
-    }
-}

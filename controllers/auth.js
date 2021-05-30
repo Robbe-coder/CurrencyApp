@@ -26,7 +26,7 @@ const signup = async (req, res, next) => {
         console.log(result);
         let token = jwt.sign({
             uid: result._id
-        }, config.get('jwt.secret'));
+        }, process.env.pswrd || config.get('jwt.secret'));
         res.json({
             "status": "success",
             "result": result,
@@ -56,7 +56,7 @@ const login = async (req, res, next) => {
         if(!result.error) {
             let token = jwt.sign({
                 uid: result.user._id
-            }, config.get('jwt.secret'));
+            }, process.env.pswrd || config.get('jwt.secret'));
     
             return res.json({
                 "status": "success",
