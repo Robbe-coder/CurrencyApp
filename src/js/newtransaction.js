@@ -29,7 +29,10 @@ newTransactionButton.addEventListener("click", (e) => {
             document.getElementById("amount").value = "";
             document.getElementById("reason").value = "Helping out";
             document.getElementById("message").value = "";
-            window.alert("Transaction succesful!");
+            
+            let formSuccess = document.querySelector(".form__success");
+            formSuccess.innerText = "Succesfully made a transaction!";
+            formSuccess.style.display = "flex";
         }
     });
 
