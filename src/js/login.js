@@ -20,11 +20,15 @@ signupBtn.addEventListener("click", (e) => {
             return response.json();
 
         }).then(json => {
-            if(json.status === "success"){
+            if(json.status === "success") {
                 console.log("login succes")
                 let token = json.data.token;
                 localStorage.setItem("token",token);
                 window.location.href = "home";
+            } else if(json.status === "error") {
+                document.querySelector('#username').value = "";
+                document.querySelector('#password').value = "";
+                window.alert(json.message);
             }
         })
     
