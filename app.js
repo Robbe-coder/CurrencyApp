@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
+const config = require('config');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -11,7 +12,7 @@ var transactionsRouter = require('./routes/transactions');
 const passport =require('./passport/passport');
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
-mongoose.connect('mongodb://localhost:27017/currencyapp', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(config.get('Database.conn'), {useNewUrlParser: true, useUnifiedTopology: true});
 var app = express();
 
 // view engine setup
