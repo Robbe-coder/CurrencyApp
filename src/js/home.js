@@ -10,9 +10,7 @@ window.addEventListener("load",()=>{
     }).then(result => {
         return result.json();
     }).then(json => {
-        console.log(json);
-        //console.log(json.transactions[0].amount);
-        console.log(json.transactions.length);
+
         if(json.transactions.length !== 0){
 
             let arrayLength= json.transactions.length;
