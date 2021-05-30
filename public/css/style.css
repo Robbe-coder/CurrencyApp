@@ -127,6 +127,18 @@ body > * {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
   color: #C4C4C4; }
 
+.form__success {
+  margin-bottom: 30px;
+  background-color: #487a56;
+  width: 100%;
+  border-radius: 10px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+  color: #C4C4C4; }
+
 .menu {
   display: flex;
   align-items: center;
