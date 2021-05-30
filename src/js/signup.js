@@ -26,7 +26,8 @@ signupBtn.addEventListener("click", (e) => {
         }).then(json => {
             console.log(json);
             if(json.status === "success") {
-                console.log("signup succes");
+
+                console.log("signup success");
                 document.querySelector('#name').value = "";
                 document.querySelector('#email').value = "";
                 document.querySelector('#password').value = "";
@@ -36,6 +37,15 @@ signupBtn.addEventListener("click", (e) => {
                 localStorage.setItem("token",token);
                 window.location.href = "home";
 
+            } else if(json.status === "error") {
+                document.querySelector('#name').value = "";
+                document.querySelector('#email').value = "";
+                document.querySelector('#password').value = "";
+                document.querySelector('#password-repeat').value = "";
+                
+                let formError = document.querySelector(".form__error");
+                formError.innerText = json.error;
+                formError.style.display = "flex";
             }
         });
     }

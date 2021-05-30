@@ -2,15 +2,25 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 const signup = async (req, res, next) => {
+
     let username = req.body.username;
     let name = req.body.name;
     let password = req.body.password;
+
+    if(!username.includes("@student.thomasmore.be")) {
+        res.json({
+            "status": "error",
+            "error": "Not a Thomas More email address."
+        });
+        return;
+    }
 
     const user = new User({
         username: username,
         name: name,
         amount: 100
     });
+    
     await user.setPassword(password);
     await user.save().then(result => {
         console.log(result);
