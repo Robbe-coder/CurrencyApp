@@ -24,7 +24,7 @@ signupBtn.addEventListener("click", (e) => {
                 console.log("login succes")
                 let token = json.data.token;
                 localStorage.setItem("token",token);
-                window.location.href="home.html";
+                window.location.href = "home";
             }
         })
     

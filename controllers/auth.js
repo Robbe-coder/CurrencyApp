@@ -2,13 +2,13 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 const signup = async (req, res, next) => {
-    let email = req.body.email;
     let username = req.body.username;
+    let name = req.body.name;
     let password = req.body.password;
 
     const user = new User({
         username: username,
-        email: email,
+        name: name,
         amount: 100
     });
     await user.setPassword(password);
